@@ -2,12 +2,11 @@
   "name": "igdocumentation-theme",
   "version": "1.0.0",
   "description": "Theming used for Infragistics Documentation",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp sass && npm pack"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "files": [
     "css/**/*"
   ],
