@@ -575,28 +575,6 @@ header.offline {
 
 /* body and content */
 #document-content {
-    /*
-		D.P. 28th Mar 2017 Bug 234670: Bookmark links inside topics scroll the page too far down leaving the bookmark hidden under the page's header
-		Fix per: http://stackoverflow.com/a/38106970
-	*/
-    & *[id]:before {
-        display: block;
-        content: " ";
-        margin-top: -140px; /* 129 headers + a lil top space */
-        height: 140px;
-        visibility: hidden;
-    }
-    /*
-			D.P. 13th Oct 2017 IgniteUI/help-topics#339 
-			Per WebKit comment pointing to https://stackoverflow.com/a/39548920 using inline-block + 5px extra to avoid breaking lists
-		*/
-    & li *[id]:before {
-        display: inline-block;
-        content: " ";
-        margin-top: -145px; /* 129 headers + a lil top space */
-        height: 145px;
-        visibility: hidden;
-    }
     /* disable anchor spacing for tab links */
     & .ui-tabs a[id]:before,
     & .ui-tabs div[id]:before {
@@ -645,22 +623,6 @@ header.offline {
         padding-top: 0.75em;
         padding-bottom: 0.2em;
         color: $text-dark;
-    }
-    /* A.H. Bug 243168: When using "toc::[]", generated links scroll the page past the intended target, probably because of the header  */
-    & h2[id],
-    & h3[id],
-    & h4[id],
-    & h5[id],
-    & h6[id] {
-        padding-top: initial; /* Bug 243168 - remove padding to prevent issue */
-    }
-
-    & h2[id]:before,
-    & h3[id]:before,
-    & h4[id]:before,
-    & h5[id]:before,
-    & h6[id]:before {
-        height: 152px; /* Bug 243168 - add extra space to compensate for removed padding-top */
     }
 
     & h1 > h2 {
